@@ -23,6 +23,8 @@ However...you can *only* run the global reference frame analysis in OpenSim 4.1.
 
 This method is fast and simple, so if you don't mind keeping OpenSim 4.1 installed it's great for quick checks of your results (it's perfectly fine to keep multiple versions of OpenSim installed at the same time, by the way).
 
+Do note that this demo plots all forces as coming out of the insertion point of the muscle, by selecting only the "X/Y/Z1" component from the points and vectors file. This has the consequence of making the gastroc forces show up as coming out of the calcaneus (which they do, of course, since that's the insertion point of that muscle) but if you were actually analyzing the muscle forces on the femur, you'd want these particular muscle forces to come out of the origin point instead. This is simple and easy to do in the local coordinate system (as below).  
+
 **Demo:** Run `demo_plot_forces_as_fake_grfs.m` then:  
 
 1) Start OpenSim
