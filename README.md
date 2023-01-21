@@ -9,7 +9,8 @@ This demo uses the model and data distributed with the [Rajagopal 2015](https://
 
 ## Method 1: Trick OpenSim into thinking the muscle forces are ground reaction forces  
 
-<img src="https://raw.githubusercontent.com/johnjdavisiv/line-of-action-visualization/main/demo_pseudo_grfs.png" height="600">
+<img src="https://raw.githubusercontent.com/johnjdavisiv/line-of-action-visualization/main/demo_pseudo_grfs.png" height="600">  
+
 *As illustrated in* `demo_plot_forces_as_fake_grfs.m`  
 
 This method requires running the muscle line of action plugin with the `local_ref_system` set to `false`, so the muscle directions are exported as vectors in the global reference frame, and the muscle origins are exported as points in the global reference frame.  
