@@ -68,10 +68,25 @@ for a=1:n_muscles
 
     
     this_muscle = all_muscles{a};
+
+    %                                ** NOTE **
+    % Per the string searches below we only get the insertion points of muscles (_X2, for example).
+    % The upshot of this is that all muscle forces will be shown as coming out of their insertion
+    % points (which they do, in some sense) but that might not be what you want for your
+    % applicatoin. For instance, in this demo, we are exporting all muscles that act on the femur,
+    % but the gastroc forces are still shown as coming out of the calcaneus, since that's where the
+    % insertion point of the gastrocs is. You may need some more careful code if you want to export
+    % all the forces that come "out" of the femur (e.g. adductors from the insertion out to origin,
+    % but gastrocs from origin out to insertion) 
+
+    % This is mainly an issue in the global coordinate export, since if you export in local
+    % coordinate system then everything "originates" on the local segment (but of course we need the
+    % global export for this trick to work)
     
     att_ix = contains(point_cols, [this_muscle, '_X2']);
     att_iy = contains(point_cols, [this_muscle, '_Y2']);
     att_iz = contains(point_cols, [this_muscle, '_Z2']);
+    %In the plugin, "_X2" is insertion, _X1 is origin.
     
     vec_ix = contains(vector_cols, [this_muscle, '_X2']);
     vec_iy = contains(vector_cols, [this_muscle, '_Y2']);
