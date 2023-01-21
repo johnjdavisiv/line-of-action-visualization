@@ -9,6 +9,8 @@ This demo uses the model and data distributed with the [Rajagopal 2015](https://
 
 ## Method 1: Trick OpenSim into thinking the muscle forces are ground reaction forces  
 
+![alt text](https://raw.githubusercontent.com/johnjdavisiv/line-of-action-visualization/main/demo_pseudo_grfs.png)
+
 *As illustrated in* `demo_plot_forces_as_fake_grfs.m`  
 
 This method requires running the muscle line of action plugin with the `local_ref_system` set to `false`, so the muscle directions are exported as vectors in the global reference frame, and the muscle origins are exported as points in the global reference frame.  
@@ -32,6 +34,7 @@ This method is fast and simple, so if you don't mind keeping OpenSim 4.1 install
 7) Play the motion file! 
 
 ## Method 2: Import bone geometry into MATLAB and overlay forces as 3D lines  
+![alt text](https://raw.githubusercontent.com/johnjdavisiv/line-of-action-visualization/main/demo_line_of_action_plot.png)
 
 *As illustrated in* `demo_plot_forces_on_femur_in_matlab.m`
 
